@@ -27,7 +27,7 @@
         --gold-soft: #d9b36a;
         --line: #ddd2ba;
         --card-shadow: 0 10px 30px rgba(34, 49, 44, 0.1);
-        --hero-overlay: linear-gradient(180deg, rgba(6, 32, 28, 0.42) 0%, rgba(6, 32, 28, 0.18) 45%, rgba(6, 32, 28, 0.72) 100%);
+        --hero-overlay: linear-gradient(180deg, rgba(26, 17, 58, 0.66) 0%, rgba(21, 20, 52, 0.56) 45%, rgba(13, 9, 36, 0.86) 100%);
         --plum: #43307a;
         --plum-deep: #2c1c52;
         --plum-ink: #ece5f7;
@@ -101,7 +101,7 @@
       }
 
       /* ---------- hero ---------- */
-      .hero { position: relative; color: #f5efdd; }
+      .hero { position: relative; color: #f7f3ea; }
       .hero img.bg {
         position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
       }
@@ -111,14 +111,14 @@
         max-width: 1120px; margin: 0 auto; padding: 96px 20px 84px;
         text-align: center;
       }
-      .hero .place { letter-spacing: 0.5em; font-size: 13px; color: var(--gold-soft); font-weight: 700; text-indent: 0.5em; }
+      .hero .place { letter-spacing: 0.5em; font-size: 13px; color: rgba(247,243,234,.82); font-weight: 700; text-indent: 0.5em; }
       .hero h1 { font-size: clamp(44px, 9vw, 84px); font-weight: 900; margin: 14px 0 6px; letter-spacing: 0.08em; line-height: 1.15; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
-      .hero .en { font-size: clamp(13px, 2.4vw, 17px); letter-spacing: 0.34em; color: rgba(245,239,221,.85); text-indent: .34em; }
+      .hero .en { font-size: clamp(13px, 2.4vw, 17px); letter-spacing: 0.34em; color: rgba(247,243,234,.85); text-indent: .34em; }
       .hero .verse {
         max-width: 640px; margin: 34px auto 0; font-family: "Noto Serif SC", serif;
         font-size: clamp(16.5px, 3vw, 20px); line-height: 1.9;
       }
-      .hero .verse cite { display: block; margin-top: 8px; font-size: 13.5px; font-style: normal; color: var(--gold-soft); letter-spacing: .2em; }
+      .hero .verse cite { display: block; margin-top: 8px; font-size: 13.5px; font-style: normal; color: rgba(247,243,234,.78); letter-spacing: .2em; }
       .hero .cta { margin-top: 36px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
       .btn {
         display: inline-block; text-decoration: none; font-weight: 700; font-size: 15px;
@@ -126,8 +126,8 @@
       }
       .btn-gold { background: var(--gold); color: #fff8ea; }
       .btn-gold:hover { background: #a5761f; }
-      .btn-ghost { border-color: rgba(245,239,221,.65); color: #f5efdd; background: rgba(6,32,28,.25); }
-      .btn-ghost:hover { background: rgba(6,32,28,.45); }
+      .btn-ghost { border-color: rgba(247,243,234,.65); color: #f7f3ea; background: rgba(10,8,30,.25); }
+      .btn-ghost:hover { background: rgba(10,8,30,.45); }
 
       /* ---------- sections ---------- */
       section { padding: 76px 20px; }
@@ -361,8 +361,20 @@
 
       /* hero slogan */
       .hero .slogan { margin-top: 30px; font-family: "Noto Serif SC", serif; font-weight: 900; font-size: clamp(30px, 7vw, 64px); line-height: 1.3; letter-spacing: .14em; text-indent: .14em; color: var(--gold-soft); text-shadow: 0 2px 26px rgba(0,0,0,.45); }
-      .hero .verse2 { max-width: 640px; margin: 18px auto 0; font-size: 14.5px; color: rgba(245,239,221,.85); }
-      .hero .verse2 cite { font-style: normal; color: var(--gold-soft); }
+      .hero .verse-sub { max-width: 640px; margin: 20px auto 0; font-family: "Noto Serif SC", serif; font-size: 16px; line-height: 1.9; color: rgba(247,243,234,.92); }
+      .hero .verse-sub cite { font-style: normal; color: rgba(247,243,234,.75); font-size: 13.5px; }
+      .hero .verse2 { max-width: 640px; margin: 14px auto 0; font-size: 14.5px; color: rgba(247,243,234,.85); }
+      .hero .verse2 cite { font-style: normal; color: rgba(247,243,234,.75); }
+
+      /* siloam promise */
+      .promise-band { background: var(--bg-soft); text-align: center; }
+      .promise-band .rule { margin-left: auto; margin-right: auto; }
+      .promise-band h2 { font-size: clamp(26px, 4.5vw, 36px); font-weight: 900; margin: 0 0 24px; line-height: 1.35; }
+      .promise-verse { font-family: "Noto Serif SC", serif; font-size: clamp(19px, 3.4vw, 26px); line-height: 1.95; max-width: 760px; margin: 0 auto; }
+      .promise-verse cite { display: block; margin-top: 10px; font-size: 13.5px; font-style: normal; color: var(--gold); letter-spacing: .2em; font-family: "Noto Sans SC", sans-serif; font-weight: 700; }
+      .promise-note { max-width: 680px; margin: 26px auto 0; font-size: 16.5px; color: var(--ink-soft); }
+      .promise-note b { color: var(--teal); }
+      @media (prefers-color-scheme: dark) { .promise-note b { color: var(--gold-soft); } }
 
       /* welcome trio */
       .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -505,9 +517,10 @@
         <div class="en">SILOAM R MINISTRIES</div>
         <div class="slogan">凭信前行，经历信实</div>
         <p class="verse">
-          耶稣说：「你往西罗亚池子里去洗。」他去一洗，回头就看见了。
-          <cite>—— 约翰福音 9:7</cite>
+          总要持定所承认的指望，不至摇动，因为那应许我们的是信实的。
+          <cite>—— 希伯来书 10:23</cite>
         </p>
+        <p class="verse-sub">耶稣说：「你往西罗亚池子里去洗。」他去一洗，回头就看见了。<cite> —— 约翰福音 9:7</cite></p>
         <p class="verse2">「你们要去，使万民作我的门徒……」<cite> —— 马太福音 28:19</cite></p>
         <div class="cta">
           <a class="btn btn-gold" href="#gather">聚会地点与时间</a>
@@ -516,6 +529,18 @@
         </div>
       </div>
     </header>
+
+    <section class="promise-band" id="promise">
+      <div class="wrap">
+        <div class="rule"></div>
+        <h2 class="serif">西罗亚的应许</h2>
+        <p class="promise-verse">
+          「这百姓既厌弃西罗亚缓流的水，喜悦利汛和利玛利的儿子」
+          <cite>—— 以赛亚书 8:6</cite>
+        </p>
+        <p class="promise-note">西罗亚教会的名字带着一个神的应许——<b>西罗亚缓流的水</b>，看着缓慢，却是神源源不断的供应，是不缺乏的应许。</p>
+      </div>
+    </section>
 
     <section id="about">
       <div class="wrap welcome-grid">
