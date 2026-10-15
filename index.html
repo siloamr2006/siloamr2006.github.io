@@ -300,9 +300,12 @@
       .g-card ul.times b { color: var(--ink); white-space: nowrap; font-weight: 700; }
       .g-card ul.times span { color: var(--ink-soft); text-align: right; }
       .g-card .loc-phone { margin: 12px 0 0; font-size: 14.5px; color: var(--ink-soft); }
-      .g-card .loc-note { margin: 12px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); font-size: 14.5px; color: var(--ink-soft); }
-      .g-card .loc-note b { color: var(--ink); }
-      .g-card .loc-note .addr2 { font-family: "Noto Serif SC", serif; font-size: 15.5px; color: var(--ink); }
+      .g-card .loc-sub { margin: 16px 0 0; padding: 16px 18px; background: var(--bg-soft); border-radius: 8px; font-size: 14.5px; color: var(--ink-soft); }
+      .g-card .loc-sub .sub-label { font-family: "Noto Serif SC", serif; font-weight: 700; font-size: 16.5px; color: var(--ink); margin: 0 0 4px; }
+      .g-card .loc-sub .addr2 { font-family: "Noto Serif SC", serif; font-size: 15.5px; color: var(--ink); margin: 0 0 6px; }
+      .g-card .loc-sub .sub-time { margin: 0; font-size: 14.5px; }
+      .g-card .loc-sub .sub-time b { color: var(--ink); font-weight: 700; }
+      .g-card .loc-sub .sub-note { margin: 6px 0 0; font-size: 13.5px; }
 
       /* gospel */
       .gospel-band { background: var(--plum-deep); color: var(--plum-ink); }
@@ -625,9 +628,12 @@
               <li><b>周天（主日崇拜）</b><span>1:00 PM – 2:30 PM</span></li>
               <li><b>周天（儿童主日学）</b><span>1:00 PM – 2:30 PM</span></li>
               <li><b>周天（主日团契）</b><span>2:45 PM – 4:00 PM</span></li>
-              <li><b>周一（查经）</b><span>12:00 PM – 2:00 PM</span></li>
             </ul>
-            <p class="loc-note"><b>周一查经团契 · <span class="addr2">1153 Lakehill Dr, Lawrenceville, GA 30044</span></b><br />（周一查经在此地址聚会，不在上方分堂地址。）</p>
+            <div class="loc-sub">
+              <p class="sub-label">周一查经团契</p>
+              <p class="addr2">1153 Lakehill Dr, Lawrenceville, GA 30044</p>
+              <p class="sub-time"><b>周一</b> 12:00 PM – 2:00 PM</p>
+            </div>
             <p class="loc-phone">电话：<a href="tel:+19082683653">(908) 268-3653</a></p>
           </article>
         </div>
