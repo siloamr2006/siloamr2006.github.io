@@ -1525,6 +1525,10 @@
           var key = norm(node.nodeValue);
           textItems.push({ n: node, zh: node.nodeValue, en: TEXT[key] });
         }
+        // 封面主名例外：英文模式下作全英文「Siloam Baptist Church」，不随全站字典译作 Siloam R Ministries（副名仍保留 Siloam R Ministries）
+        textItems.forEach(function (it) {
+          if (it.n.parentNode && it.n.parentNode.nodeName === "H1") it.en = "Siloam Baptist Church";
+        });
         var attrItems = [];
         document.querySelectorAll("[alt], [title], [aria-label]").forEach(function (el) {
           ["alt", "title", "aria-label"].forEach(function (a) {
