@@ -211,6 +211,41 @@
       .toggle-btn .arrow { display: inline-block; transition: transform .25s; }
       .toggle-btn[aria-expanded="true"] .arrow { transform: rotate(180deg); }
 
+      /* sermon videos */
+      .vid-sub { font-size: 22px; margin: 0 0 6px; }
+      .vid-sub-note { margin: 0 0 22px; color: var(--ink-soft); font-size: 15.5px; }
+      .vid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      @media (max-width: 860px) { .vid-grid { grid-template-columns: 1fr; } }
+      .v-card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+        box-shadow: var(--card-shadow);
+      }
+      .video-frame { aspect-ratio: 16 / 9; background: #000; }
+      .video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+      .v-body { padding: 18px 22px 20px; }
+      .v-body .v-date { color: var(--gold); font-weight: 700; font-size: 13.5px; letter-spacing: .1em; }
+      .v-body h4 { margin: 4px 0 0; font-size: 19px; line-height: 1.45; font-family: "Noto Serif SC", serif; }
+      .v-body h4 .speaker { font-size: 15.5px; color: var(--ink-soft); font-family: "Noto Sans SC", sans-serif; font-weight: 500; }
+      .vid-all { max-width: 880px; margin: 0 auto; }
+      .archive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      @media (max-width: 900px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .archive-grid { grid-template-columns: 1fr; } }
+      .a-card {
+        display: block; text-decoration: none; background: var(--surface); border: 1px solid var(--line);
+        border-radius: 10px; padding: 20px 22px; box-shadow: var(--card-shadow); color: var(--ink);
+      }
+      .a-card:hover { border-color: var(--gold); }
+      .a-card .a-year { font-family: "Noto Serif SC", serif; font-weight: 900; font-size: 21px; color: var(--teal); }
+      @media (prefers-color-scheme: dark) { .a-card .a-year { color: var(--gold-soft); } }
+      .a-card .a-name { display: block; font-size: 15.5px; margin-top: 2px; }
+      .a-card .a-open { display: block; margin-top: 10px; font-size: 13.5px; font-weight: 700; color: var(--gold); letter-spacing: .06em; }
+      .vid-block { margin-top: 52px; }
+      .vid-block:first-of-type { margin-top: 0; }
+      .channel-cta { text-align: center; margin-top: 52px; }
+      .channel-cta p { margin: 0 0 16px; color: var(--ink-soft); font-size: 15.5px; }
+      .btn-teal { background: var(--teal); color: #fff; }
+      .btn-teal:hover { background: var(--teal-deep); }
+
       /* teaching */
       .teach-band { background: var(--teal-deep); color: var(--teal-ink); }
       .teach-band .sec-head p { color: #b9cdc2; }
@@ -265,6 +300,9 @@
       .g-card ul.times b { color: var(--ink); white-space: nowrap; font-weight: 700; }
       .g-card ul.times span { color: var(--ink-soft); text-align: right; }
       .g-card .loc-phone { margin: 12px 0 0; font-size: 14.5px; color: var(--ink-soft); }
+      .g-card .loc-note { margin: 12px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); font-size: 14.5px; color: var(--ink-soft); }
+      .g-card .loc-note b { color: var(--ink); }
+      .g-card .loc-note .addr2 { font-family: "Noto Serif SC", serif; font-size: 15.5px; color: var(--ink); }
 
       /* gospel */
       .gospel-band { background: var(--plum-deep); color: var(--plum-ink); }
@@ -445,6 +483,7 @@
           <a href="#gather">聚会地点</a>
           <a href="#gospel">福音</a>
           <a href="#sermons">讲道信息</a>
+          <a href="#videos">讲道视频</a>
           <a href="#training">门训中心</a>
           <a href="#devotions">灵修图文</a>
           <a href="#team">牧者同工</a>
@@ -470,6 +509,7 @@
         <div class="cta">
           <a class="btn btn-gold" href="#gather">聚会地点与时间</a>
           <a class="btn btn-ghost" href="#sermons">近期讲道</a>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@siloam.r.ministries" target="_blank" rel="noopener">YouTube 频道</a>
         </div>
       </div>
     </header>
@@ -587,6 +627,7 @@
               <li><b>周天（主日团契）</b><span>2:45 PM – 4:00 PM</span></li>
               <li><b>周一（查经）</b><span>12:00 PM – 2:00 PM</span></li>
             </ul>
+            <p class="loc-note"><b>周一查经团契 · <span class="addr2">1153 Lakehill Dr, Lawrenceville, GA 30044</span></b><br />（周一查经在此地址聚会，不在上方分堂地址。）</p>
             <p class="loc-phone">电话：<a href="tel:+19082683653">(908) 268-3653</a></p>
           </article>
         </div>
@@ -716,6 +757,137 @@
               <button class="toggle-btn" type="button" data-target="outline-matt" aria-expanded="false">查看大纲 <span class="arrow">▾</span></button>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rule"></div>
+          <h2>讲道视频</h2>
+          <p>教会的主日讲道同步发布在 YouTube 频道「西罗亚浸信会」。以下最新讲道可直接在本页收看；频道全部视频与历年存档也一并连好。</p>
+        </div>
+
+        <div class="vid-block">
+          <h3 class="serif vid-sub">最新讲道</h3>
+          <p class="vid-sub-note">点开即可播放（视频在 YouTube 上播放）。</p>
+          <div class="vid-grid">
+            <article class="v-card">
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/l2m8kDgAvps" title="2026年10月12日主日崇拜《焉知不是为现今的机会》邱世伟 传道" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="v-body">
+                <div class="v-date">2026 年 10 月 12 日 · 主日崇拜</div>
+                <h4>《焉知不是为现今的机会》 <span class="speaker">邱世伟 传道</span></h4>
+              </div>
+            </article>
+            <article class="v-card">
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/BmylPcW0ffw" title="2026年10月05日主日崇拜《当信仰面临危机时》Peter 郑长老" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="v-body">
+                <div class="v-date">2026 年 10 月 5 日 · 主日崇拜</div>
+                <h4>《当信仰面临危机时》 <span class="speaker">Peter 郑长老</span></h4>
+              </div>
+            </article>
+            <article class="v-card">
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/U0Op70913lA" title="2026年09月28日主日崇拜《认识祂、听从祂》叶明亮 牧师" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="v-body">
+                <div class="v-date">2026 年 9 月 28 日 · 主日崇拜</div>
+                <h4>《认识祂、听从祂》 <span class="speaker">叶明亮 牧师</span></h4>
+              </div>
+            </article>
+            <article class="v-card">
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/pU5wPre--0c" title="2026年09月21日主日崇拜《寻找一个更美的家乡》王丽芳 传道" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="v-body">
+                <div class="v-date">2026 年 9 月 21 日 · 主日崇拜</div>
+                <h4>《寻找一个更美的家乡》 <span class="speaker">王丽芳 传道</span></h4>
+              </div>
+            </article>
+            <article class="v-card">
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/e0K5WQ25ch4" title="2026年09月07日主日崇拜《当「前行」变得艰难》王丽芳 传道" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="v-body">
+                <div class="v-date">2026 年 9 月 7 日 · 主日崇拜</div>
+                <h4>《当「前行」变得艰难》 <span class="speaker">王丽芳 传道</span></h4>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="vid-block">
+          <h3 class="serif vid-sub">全部视频</h3>
+          <p class="vid-sub-note">教会全部讲道视频，新片自动更新——教会在 YouTube 发布新讲道后，这里会自动出现。</p>
+          <div class="vid-all">
+            <div class="v-card">
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=UUeEr40LUlkIgxZw92kzqetw" title="西罗亚浸信会 YouTube 频道全部视频（自动更新）" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vid-block">
+          <h3 class="serif vid-sub">历年信息存档</h3>
+          <p class="vid-sub-note">按年份整理的讲道播放列表，点开在 YouTube 收看。</p>
+          <div class="archive-grid">
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwlNkTSmj8yBbzvJgl1NY6T0" target="_blank" rel="noopener">
+              <span class="a-year">2025 年</span>
+              <span class="a-name">2025年信息《爱主更深 活出基督》</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwlXjQcWVsE7JgF_6jr9Djq0" target="_blank" rel="noopener">
+              <span class="a-year">2024 年</span>
+              <span class="a-name">2024年信息</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwmidYlPtsqzr-XMmOgzClay" target="_blank" rel="noopener">
+              <span class="a-year">2023 年</span>
+              <span class="a-name">2023证道信息</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwnUU0bmAMOJn50uTNskaFdD" target="_blank" rel="noopener">
+              <span class="a-year">2022 年</span>
+              <span class="a-name">2022证道信息</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwnmRPvz7puJyV4ZExQc6LGv" target="_blank" rel="noopener">
+              <span class="a-year">2021 年</span>
+              <span class="a-name">2021证道信息</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwkoBUpUNgM7KPjg02qASpr1" target="_blank" rel="noopener">
+              <span class="a-year">2020 年</span>
+              <span class="a-name">2020证道信息</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwmpzQT1Rzq19zuLmaQmZ2gm" target="_blank" rel="noopener">
+              <span class="a-year">2019 年</span>
+              <span class="a-name">2019证道信息</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwnndJf95XpQGJMtwNcUuc77" target="_blank" rel="noopener">
+              <span class="a-year">2018 年</span>
+              <span class="a-name">2018证道信息</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+            <a class="a-card" href="https://www.youtube.com/playlist?list=PLXaKopmEpZwmw33jEpXNiyHA1I_f-PUtJ" target="_blank" rel="noopener">
+              <span class="a-year">2017 年</span>
+              <span class="a-name">2017证道</span>
+              <span class="a-open">在 YouTube 打开 →</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="channel-cta">
+          <p>频道里共有 720 支视频：主日讲道、查经与历年信息，都可以在教会 YouTube 频道找到。</p>
+          <a class="btn btn-teal" href="https://www.youtube.com/@siloam.r.ministries" target="_blank" rel="noopener">前往教会 YouTube 频道</a>
         </div>
       </div>
     </section>
@@ -1173,6 +1345,7 @@
           <p>询问聚会、门训中心报名，或任何信仰问题，欢迎来信或致电：</p>
           <p class="foot-mail"><a href="mailto:siloamr2006@gmail.com">siloamr2006@gmail.com</a></p>
           <p class="foot-mail">教会电话：<a href="tel:+13472058887">(347) 205-8887</a></p>
+          <p class="foot-mail">YouTube 频道：<a href="https://www.youtube.com/@siloam.r.ministries" target="_blank" rel="noopener">西罗亚浸信会 @siloam.r.ministries</a></p>
           <p>门训中心 2026 秋季课程：周二、周日与周一晚 Zoom 线上进行，会议号 86912375280，详情见「门训中心」。</p>
         </div>
         <div>
